@@ -22,8 +22,6 @@ This project requires specific dependencies to run correctly. Please ensure you 
    - MSVC v142 - VS 2019 C++ x64/x86 build tools
    - Windows 10 SDK (10.0.19041.0 or later)
 
-3. **Java Development Kit 8+**  
-   [Adoptium JDK 17 recommended](https://adoptium.net/temurin/releases/?version=17)
 
 ### ⚙️ Post-Installation Checks
 Verify your setup with these commands in PowerShell/CMD:
