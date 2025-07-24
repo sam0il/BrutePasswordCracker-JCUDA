@@ -243,7 +243,7 @@ extern "C" __global__ void bruteForceKernel(
             temp /= charsetLength;
         }
     }
-////////////////
+/////////////////////////////////////////////////////////
     // Hash it
     unsigned char hash[16];
     CUDA_MD5_CTX ctx;
@@ -296,6 +296,7 @@ void mcm_cuda_md5_hash_batch(BYTE* in, WORD inlen, BYTE* out, WORD n_batch)
 	cudaFree(cuda_indata);
 	cudaFree(cuda_outdata);
 }
+/////////////////////////////////////////////////////////
 extern "C" __global__ void dictionaryAttackKernel(
     const char* dictionary,
     const int* wordLengths,
@@ -339,3 +340,4 @@ extern "C" __global__ void dictionaryAttackKernel(
     }
 }
 }
+/////////////////////////////////////////////////////////
