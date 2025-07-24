@@ -15,7 +15,7 @@ public class HashValidator {
 
     public boolean matches(String candidate) {
         return hash(candidate).equals(targetHash);
-    }
+   }
 
     public String hash(String input) {
         try {
