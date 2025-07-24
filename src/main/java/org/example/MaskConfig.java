@@ -49,7 +49,4 @@ public class MaskConfig {
         return mask;
     }
 
-    public int getLength() {
-        return mask != null ? mask.length() : 0;
-    }
 }

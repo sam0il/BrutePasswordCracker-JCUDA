@@ -70,7 +70,7 @@ public class JCudaBruteForceEngine {
             long totalCombinations = (long) Math.pow(charSet.length(), unknownCount);
             long attemptsSoFar = 0;
             int batchCounter = 0;
-            long lastLogTime = System.currentTimeMillis();
+           // long lastLogTime = System.currentTimeMillis();
 
             System.out.println("\nStarting length " + length +
                     " | Total combinations: " + totalCombinations +
@@ -86,7 +86,7 @@ public class JCudaBruteForceEngine {
             }
 
             // debug print
-            System.out.println("Mask array: " + Arrays.toString(maskArray));
+           // System.out.println("Mask array: " + Arrays.toString(maskArray));
 
             CUdeviceptr dMaskArray = new CUdeviceptr();
             cuMemAlloc(dMaskArray, length);  // Allocate EXACTLY the password length
@@ -95,7 +95,7 @@ public class JCudaBruteForceEngine {
             while (attemptsSoFar < totalCombinations) {
                 int batchSize = (int) Math.min(BATCH_SIZE, totalCombinations - attemptsSoFar);
                 int gridSize = (int) Math.ceil((double) batchSize / BLOCK_SIZE);
-                long batchEnd = attemptsSoFar + batchSize;
+             //   long batchEnd = attemptsSoFar + batchSize;
 
                 // Generate sample candidate for logging
                 String sampleCandidate = generateSampleCandidate(
@@ -104,7 +104,7 @@ public class JCudaBruteForceEngine {
                         maskMap,
                         charSet
                 );
-                System.out.println("Generated sample candidate: " + sampleCandidate);  // DEBUG
+              //  System.out.println("Generated sample candidate: " + sampleCandidate);  // DEBUG
 
                 // Log progress at the start of each batch
                 System.out.printf(

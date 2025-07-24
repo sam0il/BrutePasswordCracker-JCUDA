@@ -309,4 +309,46 @@ void mcm_cuda_md5_hash_batch(BYTE* in, WORD inlen, BYTE* out, WORD n_batch)
 	cudaFree(cuda_indata);
 	cudaFree(cuda_outdata);
 }
+extern "C" __global__ void dictionaryAttackKernel(
+    const char* dictionary,
+    const int* wordLengths,
+    int wordCount,
+    int maxWordLength,
+    const unsigned char* targetHash,
+    char* foundPassword,
+    int* foundFlag
+) {
+    int idx = blockIdx.x * blockDim.x + threadIdx.x;
+    if (idx >= wordCount || *foundFlag == 1) return;
+
+    // Get word from dictionary
+    const char* word = dictionary + idx * maxWordLength;
+    int length = wordLengths[idx];
+
+    // Hash the word
+    unsigned char hash[16];
+    CUDA_MD5_CTX ctx;
+    cuda_md5_init(&ctx);
+    cuda_md5_update(&ctx, (const unsigned char*)word, length);
+    cuda_md5_final(&ctx, hash);
+
+    // Compare hash
+    bool match = true;
+    for (int i = 0; i < 16; i++) {
+        if (hash[i] != targetHash[i]) {
+            match = false;
+            break;
+        }
+    }
+
+    if (match) {
+        int oldVal = atomicCAS(foundFlag, 0, 1);
+        if (oldVal == 0) {
+            for (int i = 0; i < length; i++) {
+                foundPassword[i] = word[i];
+            }
+            foundPassword[length] = '\0';
+        }
+    }
+}
 }
