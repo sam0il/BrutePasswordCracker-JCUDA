@@ -8,7 +8,7 @@
 
 ## 🌟 Features
 - **Brute-force password cracking using NVIDIA GPUs**  
-- **Multi-platform support:** Windows 10/11 and Linux (Ubuntu 22.04 tested)  
+- **Multi-platform support:** Windows 10/11 and Linux
 - **Dictionary and mask-based attack modes**  
 - **Optimized CUDA kernels for maximum performance**  
 
