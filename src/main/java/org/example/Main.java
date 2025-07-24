@@ -5,6 +5,10 @@ import java.util.Scanner;
 import java.util.Set;
 
 public class Main {
+    // Just change this path when trying to run the dictionary attack
+    // to your path on the passwords file located in resources
+    // get the full path!
+    // And you have hashes stored in tests.txt which are inside the Passwords.txt
     private static final String dictionaryPath = "C:\\Users\\samoi\\IdeaProjects\\BrutePasswordCrackerParallel\\src\\main\\resources\\Passwords";
     public static String crackedPassword;
 

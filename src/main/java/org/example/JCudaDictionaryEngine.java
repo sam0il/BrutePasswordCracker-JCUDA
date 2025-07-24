@@ -15,6 +15,8 @@ import static jcuda.driver.JCudaDriver.*;
 public class JCudaDictionaryEngine {
     private final HashValidator validator;
     private static final int MAX_PASSWORD_LENGTH = 32;
+
+    //Change this by getting the absolute path from your JCudaKernel.ptx
     private static final String PTX_FILE_PATH = "C:\\Users\\samoi\\IdeaProjects\\BrutePasswordCrackerJCuda\\src\\main\\java\\org\\example\\JCudaKernel.ptx";
 
     public JCudaDictionaryEngine(HashValidator validator) {
