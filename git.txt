@@ -1,0 +1,4 @@
+https://github.com/sam0il/BrutePasswordCracker-JCUDA
+
+There is also a partial/experimental attempt at a similar GPU brute-force cracker purely in C++/CUDA located in a separate repository:
+https://github.com/sam0il/BrutePasswordCracker-CUDA
