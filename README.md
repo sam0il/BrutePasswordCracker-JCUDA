@@ -1,36 +1,27 @@
-## Requirements for Running on Windows
+# GPU Password Cracker with JCuda
+[![Windows Support](https://img.shields.io/badge/Windows-10%2F11-blue?logo=windows)](https://github.com/sam0il/BrutePasswordCracker-JCUDA)
+[![Linux Support](https://img.shields.io/badge/Linux-Ubuntu%2022.04-orange?logo=linux)](https://github.com/sam0il/BrutePasswordCracker-JCUDA)
+[![CUDA Required](https://img.shields.io/badge/CUDA-11.8-green?logo=nvidia)](https://developer.nvidia.com/cuda-toolkit-archive)
 
-This project requires specific dependencies to run correctly. Please ensure you meet all requirements before attempting to run:
+## 🌟 Features
+- Brute-force password cracking using NVIDIA GPUs
+- Multi-platform support (Windows 10/11, Linux)
+- Dictionary and mask-based attack modes
+- Optimized CUDA kernels for maximum performance
 
-### 🖥️ System Requirements
-1. **Windows 10** (64-bit only)
-2. **NVIDIA GPU** with CUDA support (Compute Capability 3.0+)
-3. **Latest NVIDIA Drivers** (tested with 535+)
+## 📦 Requirements
+### Both Platforms
+| Component | Requirement |
+|-----------|-------------|
+| **GPU** | NVIDIA GPU (Compute Capability 3.0+) |
+| **Java** | JDK 17+ ([Adoptium](https://adoptium.net/)) |
+| **CUDA** | Toolkit 11.8 ([Download](https://developer.nvidia.com/cuda-11-8-0-download-archive)) |
 
-### 📦 Mandatory Dependencies
-1. **CUDA Toolkit 11.8**  
-   [Download installer](https://developer.nvidia.com/cuda-11-8-0-download-archive)  
-   *During installation:*
-   - Select "Custom" installation
-   - Ensure "CUDA Runtime", "Development Tools", and "Documentation" are selected
-   - Add CUDA to system PATH when prompted
+### Windows-Specific
+- Visual Studio 2019 Build Tools
+- Windows 10 SDK (10.0.19041+)
+- [VC++ Redistributable 2019](https://aka.ms/vs/16/release/vc_redist.x64.exe)
 
-2. **Visual Studio 2019 Build Tools**  
-   [Download installer](https://aka.ms/vs/16/release/vs_BuildTools.exe)  
-   *Required components:*
-   - C++ CMake tools for Windows
-   - MSVC v142 - VS 2019 C++ x64/x86 build tools
-   - Windows 10 SDK (10.0.19041.0 or later)
-
-
-### ⚙️ Post-Installation Checks
-Verify your setup with these commands in PowerShell/CMD:
+### Linux-Specific
 ```bash
-# Check CUDA installation
-nvcc --version  # Should show 11.8
-
-# Check NVIDIA drivers
-nvidia-smi  # Should show driver version and GPU details
-
-# Check Visual Studio tools
-cl  # Should show Microsoft C/C++ compiler info
+sudo apt install build-essential freeglut3-dev libglfw3-dev libgles2-mesa-dev
