@@ -12,3 +12,6 @@ samoil:
 
 hash that's not in the dictionary:
 76ff3937a00f5bc75796a6a347b0c048
+
+//"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+//"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=[]{}|;:,.<>?"

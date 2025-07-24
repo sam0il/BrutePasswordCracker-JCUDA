@@ -72,11 +72,11 @@ public class Main {
             JCudaBruteForceEngine engine = new JCudaBruteForceEngine(validator, charset, maxLength, maskConfig);
             crackedPassword = engine.crackPassword();
 
-//        } else if (mode == 2) {
-//            System.out.println("Starting dictionary attack...");
-//            HashValidator validator = new HashValidator(targetHash);
-//            ParallelDictionaryEngine dictEngine = new ParallelDictionaryEngine(validator, dictionaryPath);
-//            crackedPassword = dictEngine.crackPassword();
+        } else if (mode == 2) {
+            System.out.println("Starting dictionary attack...");
+            HashValidator validator = new HashValidator(targetHash);
+            JCudaDictionaryEngine dictEngine = new JCudaDictionaryEngine(validator);
+            crackedPassword = dictEngine.crackPassword(dictionaryPath);
         } else {
             System.out.println("Invalid mode selected.");
             return;
