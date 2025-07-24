@@ -3,7 +3,7 @@
 This project requires specific dependencies to run correctly. Please ensure you meet all requirements before attempting to run:
 
 ### 🖥️ System Requirements
-1. **Windows 10 or 11** (64-bit only)
+1. **Windows 10** (64-bit only)
 2. **NVIDIA GPU** with CUDA support (Compute Capability 3.0+)
 3. **Latest NVIDIA Drivers** (tested with 535+)
 
