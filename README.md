@@ -89,32 +89,6 @@
      cp /usr/local/cuda-11.8/lib64/lib*.so native/
      ```
 
-## ▶️ Running the Application
-
-### Windows
-**IntelliJ:**  
-- Open `src/main/java/org/example/Main.java`  
-- Run with VM option:  
-  ```
-  -Djava.library.path=native
-  ```
-
-**Command Line:**  
-```powershell
-java -cp "lib/*;src/main/java" -Djava.library.path=native org.example.Main
-```
-
-### Linux
-**Set Library Path:**  
-```bash
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-11.8/lib64:$PWD/native
-```
-
-**Run Application:**  
-```bash
-java -cp "lib/*:src/main/java" -Djava.library.path=native org.example.Main
-```
-
 ## 🔧 Path Configuration Notes
 - **Windows:** Use `-Djava.library.path=native` to point to `.dll` files.  
 - **Linux:**  
