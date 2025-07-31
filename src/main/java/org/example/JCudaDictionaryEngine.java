@@ -111,7 +111,7 @@ public class JCudaDictionaryEngine {
                 Pointer.to(dDictionary),
                 Pointer.to(dWordLengths),
                 Pointer.to(new int[]{wordCount}),
-                Pointer.to(new int[]{MAX_PASSWORD_LENGTH}),
+                Pointer.to(new int[]{maxWordLength}), // changed from MAXPASSWORDLENGTH to maxWordLength.
                 Pointer.to(dTargetHash),
                 Pointer.to(dFoundPassword),
                 Pointer.to(dFoundFlag)
